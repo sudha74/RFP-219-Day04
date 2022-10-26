@@ -9,16 +9,20 @@ public class SnakesAndLadders {
 
     public static void main(String[] args) {
         System.out.println("Welcome to Snakes and Ladders Game");
-        int num = (int) (Math.random() * 10) % 6 + 1;
+        int dieNum = (int) (Math.random() * 10) % 6 + 1;
         int option = (int) (Math.random() * 10) % 3;
         int dienum = 0;
         if (option == IF_LADDER) {
-            currentPosition += dienum;
+            currentPosition += dieNum;
         } else if (option == IF_SNAKE) {
-            currentPosition -= dienum;
+            currentPosition -= dieNum;
         } else if (option == NO_PLAY) {
             System.out.println("No Play");
         }
+        if (currentPosition < START_POSITION) {
+            currentPosition = 0;
+        }
+        System.out.println(currentPosition);
     }
 }
 
